@@ -4,7 +4,6 @@ FROM openjdk:8-jdk-alpine
 ENV K8_VERSION="v1.11.3"
 # FROM: https://github.com/kubernetes/helm/releases
 ENV HELM_VERSION="v2.11.0"
-
 ENV HEPTIO_AUTHENTICATOR_VERSION="0.3.0"
 
 RUN apk add --no-cache ca-certificates bash git gnupg jq py-pip 
@@ -18,7 +17,8 @@ RUN curl -s -L https://github.com/kubernetes-sigs/aws-iam-authenticator/releases
 RUN chmod +x /usr/local/bin/aws-iam-authenticator 
 RUN rm -rf /var/cache/apk/* 
 
-RUN mkdir -p ~/.kube
+RUN mkdir -p ~/.kube && mkdir -p /opt/helm
+ENV HELM_HOME="/opt/helm"
 WORKDIR /
 ADD . .
 RUN chmod +x entrypoint.sh

@@ -6,7 +6,7 @@ export ENDPOINT_URL=$(aws eks describe-cluster --name ${CLUSTER_NAME}  --query c
 cat /k8-config.template | envsubst > ~/.kube/config
 export KUBECONFIG=~/.kube/config
 
-echo "KubeConfig File\n"
+echo "KubeConfig File: \n"
 cat ~/.kube/config
 
 exec "$@"
