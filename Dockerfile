@@ -17,7 +17,7 @@ RUN curl -s -L https://github.com/kubernetes-sigs/aws-iam-authenticator/releases
 RUN chmod +x /usr/local/bin/aws-iam-authenticator 
 RUN rm -rf /var/cache/apk/* 
 
-RUN mkdir -p ~/.kube && mkdir -p /opt/helm && chmod a+rwx /opt/helm
+RUN mkdir -p /opt/kubernetes && mkdir -p /opt/helm && chmod a+rwx /opt/helm
 ENV HELM_HOME="/opt/helm"
 WORKDIR /
 ADD . .
