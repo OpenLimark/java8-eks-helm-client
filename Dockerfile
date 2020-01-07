@@ -5,6 +5,7 @@ ENV K8_VERSION="v1.14.0"
 # FROM: https://github.com/kubernetes/helm/releases
 ENV HELM_VERSION="v2.16.0"
 ENV HEPTIO_AUTHENTICATOR_VERSION="0.3.0"
+ENV KUBECONFIG="/opt/kubernetes/config"
 
 RUN apk add --no-cache ca-certificates bash git gnupg jq py-pip 
 RUN apk add --update -t deps curl gettext 
