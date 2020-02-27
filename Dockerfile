@@ -9,6 +9,8 @@ RUN apk add --update bash ca-certificates git python
 COPY install.sh /opt/install.sh
 RUN /opt/install.sh
 RUN mkdir -p /opt/kubernetes/
+RUN mkdir -p /opt/helm/
+ENV HELM_HOME /opt/helm/
 WORKDIR /
 COPY entrypoint.sh /entrypoint.sh
 COPY k8-config.template /k8-config.template
