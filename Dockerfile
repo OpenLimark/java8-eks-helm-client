@@ -3,7 +3,7 @@ FROM openjdk:8-jdk-alpine
 # FROM: https://aur.archlinux.org/packages/kubectl-bin/
 ENV K8_VERSION="v1.14.0"
 # FROM: https://github.com/kubernetes/helm/releases
-ENV HELM_VERSION="v2.14.1"
+ENV HELM_VERSION="v2.17.0"
 ENV HEPTIO_AUTHENTICATOR_VERSION="0.3.0"
 ENV KUBECONFIG="/opt/kubernetes/config"
 
